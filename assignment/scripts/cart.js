@@ -5,11 +5,11 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) { 
-    if (basket.length < maxItems) {
+    if (isFull() === false) {
     basket.push(item);
     return true;
     }
-    else if (basket.length >= maxItems) {
+    else if (isFull()) {
     return false;
     }
  //I tried doing this by referencing the isFull function and
@@ -18,6 +18,10 @@ function addItem(item) {
  //If this is wrong or mostly wrong I'd like to know how to do it.   
 }
 addItem('kale');
+
+console.log(`Basket is ${basket}`);
+console.log('Adding apples (expect true)', addItem('apples'));
+console.log(`Basket is now ${basket}`);
 
 
 function listItems() {
@@ -29,27 +33,32 @@ function listItems() {
 console.log(listItems());
 
 function empty() {
-    if (basket.length > 0) {
+    while (basket.length > 0) {
         basket.pop();
     }
 }
 
 empty();
-console.log(listItems());
+console.log(basket);
 
 function isFull() {
-    if (basket < maxItems) {
+    if (basket.length < maxItems) {
         return false;
     }
    return true;
 }
 
-function removeItem(basket, item) {
-    if (basket.indexOf(item) === true) {
-        return basket.splice(item);
-    } 
-        return null;
-}
+console.log(isFull());
+
+// function removeItem(basket, item) {
+//     if (basket.indexOf(item) === true) {
+//         return basket.splice(item);
+//     } 
+//         return null;
+// }
+
+// console.log(removeItem());
+
 //I'm sure I'm missing somthing simple but the more I work on it
 //the more wrong it gets. I'm gonna have to take the L here.
 //Looking forward to finding out the answer!
