@@ -18,7 +18,7 @@ function addItem(item) {
  //If this is wrong or mostly wrong I'd like to know how to do it.   
 }
 addItem('kale');
-console.log(addItem());
+
 
 function listItems() {
     basket.forEach((basket) => console.log(basket));
@@ -28,7 +28,14 @@ function listItems() {
 //to understand.
 console.log(listItems());
 
+function empty() {
+    if (basket.length > 0) {
+        basket.pop();
+    }
+}
 
+empty();
+console.log(listItems());
 
 function isFull() {
     if (basket < maxItems) {
@@ -37,9 +44,9 @@ function isFull() {
    return true;
 }
 
-function removeItem(basket, Spinach) {
-    if (basket.indexOf(Spinach) === true) {
-        return basket.splice(Spinach);
+function removeItem(basket, item) {
+    if (basket.indexOf(item) === true) {
+        return basket.splice(item);
     } 
         return null;
 }
