@@ -4,9 +4,9 @@ console.log('***** Cart Functions *****');
 let basket = [];
 const maxItems = 5;
 
-function addItem() { 
+function addItem(item) { 
     if (basket.length < maxItems) {
-    basket.push('Kale');
+    basket.push(item);
     return true;
     }
     else if (basket.length >= maxItems) {
@@ -17,7 +17,7 @@ function addItem() {
  //pass doing it this way I couldn't help but move on.
  //If this is wrong or mostly wrong I'd like to know how to do it.   
 }
-
+addItem('kale');
 console.log(addItem());
 
 function listItems() {
@@ -46,14 +46,6 @@ function removeItem(basket, Spinach) {
 //I'm sure I'm missing somthing simple but the more I work on it
 //the more wrong it gets. I'm gonna have to take the L here.
 //Looking forward to finding out the answer!
-
-
-
-
-
-
-
-
 
 
 
